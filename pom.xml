@@ -15,17 +15,53 @@
     </properties>
 
     <dependencies>
+
+        <!-- SOAP (JAX-WS) -->
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-ri</artifactId>
             <version>4.0.3</version>
             <type>pom</type>
         </dependency>
+
+        <!-- MySQL -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>9.0.0</version>
         </dependency>
+
     </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>com.sun.xml.ws</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>4.0.1</version>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <wsdlUrls>
+                        <wsdlUrl>http://localhost:8080/reservationService?wsdl</wsdlUrl>
+                    </wsdlUrls>
+                    <packageName>org.example.reservation.client</packageName>
+                    <sourceDestDir>
+                        ${project.build.directory}/generated-sources/wsimport
+                    </sourceDestDir>
+                </configuration>
+
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>
