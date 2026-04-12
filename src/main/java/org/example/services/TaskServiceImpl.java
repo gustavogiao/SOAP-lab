@@ -1,14 +1,15 @@
 package org.example.services;
 
-import jakarta.jws.WebService;
-import org.example.db.Database;
-import org.example.models.Task;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.example.db.Database;
+import org.example.models.Task;
+
+import jakarta.jws.WebService;
 
 @WebService(endpointInterface = "org.example.services.TaskService")
 public class TaskServiceImpl implements TaskService{

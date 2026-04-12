@@ -1,12 +1,14 @@
 package org.example.clients;
 
-import jakarta.xml.ws.Service;
+import java.net.URL;
+import java.util.List;
+
+import javax.xml.namespace.QName;
+
 import org.example.models.Task;
 import org.example.services.TaskService;
 
-import javax.xml.namespace.QName;
-import java.net.URL;
-import java.util.List;
+import jakarta.xml.ws.Service;
 
 public class TaskClient {
 
