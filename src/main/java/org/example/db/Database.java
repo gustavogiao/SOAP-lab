@@ -8,8 +8,8 @@ public class Database {
     public static Connection getConnection() throws Exception {
 
         String url = "jdbc:mysql://localhost:3306/school";
-        String user = "soapuser";
-        String password = "soap123";
+        String user = "root";
+        String password = "guga";
 
         return DriverManager.getConnection(url,user,password);
     }
